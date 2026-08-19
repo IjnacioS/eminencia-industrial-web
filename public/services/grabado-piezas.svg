@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Cabezal superior con 3 orificios -->
+  <rect x="20" y="8" width="60" height="18" rx="2" fill="#e5d00e" stroke="#17212c" stroke-width="3" stroke-linejoin="round" />
+  <circle cx="33" cy="17" r="4.5" fill="#f1efe8" stroke="#17212c" stroke-width="2.5" />
+  <circle cx="50" cy="17" r="4.5" fill="#f1efe8" stroke="#17212c" stroke-width="2.5" />
+  <circle cx="67" cy="17" r="4.5" fill="#f1efe8" stroke="#17212c" stroke-width="2.5" />
+
+  <!-- Escalonado del mandril portaherramientas -->
+  <rect x="32" y="26" width="36" height="9" fill="#f1efe8" stroke="#17212c" stroke-width="2.8" stroke-linejoin="round" />
+  <rect x="39" y="35" width="22" height="9" fill="#e5d00e" stroke="#17212c" stroke-width="2.8" stroke-linejoin="round" />
+
+  <!-- Fresa / Broca de grabado con estrías serradas -->
+  <path d="M 44,44 L 44,48 L 40,52 L 44,56 L 40,60 L 44,64 L 40,68 L 50,79 L 60,68 L 56,64 L 60,60 L 56,56 L 60,52 L 56,48 L 56,44 Z" fill="#e5d00e" stroke="#17212c" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round" />
+  <line x1="50" y1="44" x2="50" y2="76" stroke="#17212c" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Bloque de material grabado con cavidad en V -->
+  <path d="M 10,52 L 34,52 L 39,56 L 35,60 L 39,64 L 35,68 L 50,85 L 65,68 L 61,64 L 65,60 L 61,56 L 66,52 L 90,52 L 90,92 L 10,92 Z" fill="#f1efe8" stroke="#17212c" stroke-width="3" stroke-linejoin="round" />
+</svg>
