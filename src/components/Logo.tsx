@@ -9,11 +9,18 @@ export function Logo() {
       aria-label="Eminencia Industrial, volver al inicio"
       data-testid="link-logo"
     >
-      <span className="flex h-9 w-9 items-center justify-center bg-[#e5d00e] text-[#17212c] font-display text-sm font-bold">
-        EI
-      </span>
-      <span className="font-display text-lg font-bold tracking-tight text-[#f3f0e8]">
-        EMINENCIA <span className="text-[#e5d00e]">INDUSTRIAL</span>
+      <img
+        src="/imagenes/logo-icono-v2.png"
+        alt="Eminencia Industrial"
+        className="h-12 w-auto md:h-16"
+      />
+      <span className="font-display leading-tight text-[#f3f0e8]">
+        <span className="block text-sm font-bold tracking-tight md:text-lg">
+          EMINENCIA
+        </span>
+        <span className="block text-sm font-bold tracking-tight text-[#e5d00e] md:text-lg">
+          INDUSTRIAL
+        </span>
       </span>
     </a>
   );

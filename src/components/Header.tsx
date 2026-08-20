@@ -19,14 +19,13 @@ export function Header({ open, onToggle }: HeaderProps) {
       <Topbar />
 
       {/* 2. Barra de navegación principal */}
-      <div className="section-shell flex min-h-[70px] items-center justify-between">
+      <div className="section-shell relative flex min-h-[70px] items-center justify-center md:justify-between">
         <Logo />
 
         {/* Menú de navegación (desktop y móvil) */}
         <nav
-          className={`${
-            open ? 'flex' : 'hidden'
-          } absolute left-0 right-0 top-full flex-col gap-1 border-b border-white/10 bg-[#17212c] p-4 shadow-2xl md:static md:flex md:flex-row md:items-center md:gap-4 md:border-0 md:bg-transparent md:p-0 md:shadow-none`}
+          className={`${open ? 'flex' : 'hidden'
+            } absolute left-0 right-0 top-full flex-col gap-1 border-b border-white/10 bg-[#17212c] p-4 shadow-2xl md:static md:flex md:flex-row md:items-center md:gap-4 md:border-0 md:bg-transparent md:p-0 md:shadow-none`}
           aria-label="Navegación principal"
         >
           {navItems.map(([label, id]) => (
@@ -58,7 +57,7 @@ export function Header({ open, onToggle }: HeaderProps) {
         <button
           type="button"
           onClick={onToggle}
-          className="focus-ring flex h-11 w-11 items-center justify-center text-[#f3f0e8] md:hidden"
+          className="focus-ring absolute right-0 flex h-11 w-11 items-center justify-center text-[#f3f0e8] md:hidden"
           aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
           aria-expanded={open}
           data-testid="button-mobile-menu"
