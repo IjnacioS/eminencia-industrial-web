@@ -334,11 +334,11 @@
   text-transform: uppercase;
   color: #f1efe8;
 }
-.product-mark { position: relative; z-index: 1; margin: 0; font-family: var(--app-font-mono); font-size: .65rem; letter-spacing: .16em; text-transform: uppercase; color: #e5d00e; }
+.product-mark { position: relative; z-index: 1; margin: 0; font-family: var(--app-font-mono); font-size: .65rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #17212c; background: #e5d00e; padding: 2px 6px; width: fit-content; }
 
 /* Contacto y Mapa */
 .contact-link { color: #58636b; transition: color .2s ease; }
-.contact-link:hover { color: #e5d00e; }
+.contact-link:hover { color: #17212c; text-decoration: underline; }
 
 .map-placeholder {
   display: flex;

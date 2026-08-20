@@ -12,7 +12,7 @@ export function Maquinaria() {
         {/* Encabezado de la sección */}
         <SectionHeading
           eyebrow="Nuestra maquinaria"
-          title={<>Tecnología para que la <span className="text-[#e5d00e]">medida cierre.</span></>}
+          title={<>Tecnología para que la <span className="bg-[#e5d00e] text-[#17212c] px-2 py-0.5 inline-block">medida cierre.</span></>}
           text="Equipamiento industrial para corte, plegado y soldadura."
         />
 

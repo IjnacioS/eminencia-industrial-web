@@ -16,14 +16,14 @@ export function Productos() {
         <div className="flex flex-col justify-between gap-7 md:flex-row md:items-end">
           <SectionHeading
             eyebrow="Productos a definir"
-            title={<>Algunas ideas<br /><span className="text-[#e5d00e]">para empezar.</span></>}
+            title={<>Algunas ideas<br /><span className="bg-[#e5d00e] text-[#17212c] px-2 py-0.5 inline-block">para empezar.</span></>}
             text="Piezas a medida según lo que necesites: material, espesor, cantidad y terminación se conversan directamente."
           />
           <a
             href={whatsappLink('Hola, quiero consultar por un producto a medida.')}
             target="_blank"
             rel="noopener noreferrer"
-            className="focus-ring flex items-center gap-2 text-sm font-bold text-[#17212c] underline decoration-[#e5d00e] decoration-2 underline-offset-8 hover:text-[#e5d00e]"
+            className="focus-ring flex items-center gap-2 text-sm font-bold text-[#17212c] underline decoration-[#17212c] decoration-2 underline-offset-8 hover:opacity-80"
             data-testid="link-products-whatsapp"
           >
             Consultar una idea <ArrowUpRight size={17} />
@@ -41,7 +41,7 @@ export function Productos() {
               {/* Espacio placeholder para la imagen del producto */}
               <div className="product-placeholder">
                 <div className="product-placeholder-content">
-                  <ImageIcon size={24} className="text-[#e5d00e]/60" />
+                  <ImageIcon size={24} className="text-[#e5d00e]/80" />
                   <span className="product-placeholder-label">{product.placeholder}</span>
                 </div>
                 <span className="product-mark">Producto / 0{index + 1}</span>
@@ -49,7 +49,7 @@ export function Productos() {
 
               {/* Información del producto */}
               <div className="p-6">
-                <span className="font-mono text-[9px] uppercase tracking-wider text-[#e5d00e]">{product.tag}</span>
+                <span className="font-mono text-[9px] uppercase tracking-wider font-bold text-[#17212c] bg-[#e5d00e] px-2 py-0.5 inline-block">{product.tag}</span>
                 <h3 className="mt-2 font-display text-xl font-bold text-[#17212c]">{product.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-[#58636b]">{product.text}</p>
               </div>

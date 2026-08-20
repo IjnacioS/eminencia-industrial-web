@@ -12,7 +12,7 @@ export function Servicios() {
         {/* Encabezado de la sección */}
         <SectionHeading
           eyebrow="Servicios de fabricación"
-          title={<>Del plano a la <span className="text-[#e5d00e]">pieza.</span></>}
+          title={<>Del plano a la <span className="bg-[#e5d00e] text-[#17212c] px-2 py-0.5 inline-block">pieza.</span></>}
           text="Soluciones de corte, grabado y planimetría para convertir una medida, un dibujo o una necesidad en algo que funciona."
         />
 

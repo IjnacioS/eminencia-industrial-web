@@ -38,7 +38,7 @@ export function SobreMi() {
           {/* Texto "Sobre mí" con redacción limpia y sin corchetes */}
           <SectionHeading
             eyebrow="Sobre mí"
-            title={<>Una persona al otro lado<br />de cada <span className="text-[#e5d00e]">presupuesto.</span></>}
+            title={<>Una persona al otro lado<br />de cada <span className="bg-[#e5d00e] text-[#17212c] px-2 py-0.5 inline-block">presupuesto.</span></>}
             text="Soy Cristóbal Martínez, ingeniero mecánico, con más de 10 años de experiencia como jefe de producción, y actualmente director de Eminencia Industrial."
           />
 
@@ -53,7 +53,7 @@ export function SobreMi() {
           </div>
 
           <p className="mt-8 flex items-center gap-3 text-sm font-semibold">
-            <Check size={17} className="text-[#e5d00e]" /> Diseño, fabricación y seguimiento en un mismo lugar.
+            <Check size={17} className="text-[#17212c]" /> Diseño, fabricación y seguimiento en un mismo lugar.
           </p>
         </div>
       </div>

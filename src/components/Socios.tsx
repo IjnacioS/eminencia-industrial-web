@@ -14,7 +14,7 @@ export function Socios() {
         {/* Encabezado de la sección */}
         <SectionHeading
           eyebrow="Colaboraciones"
-          title={<>Gente con la que hemos <span className="text-[#e5d00e]">trabajado.</span></>}
+          title={<>Gente con la que hemos <span className="bg-[#e5d00e] text-[#17212c] px-2 py-0.5 inline-block">trabajado.</span></>}
           text="Empresas e industrias que han confiado en nuestro trabajo."
         />
 

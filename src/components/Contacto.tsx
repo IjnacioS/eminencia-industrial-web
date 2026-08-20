@@ -69,22 +69,22 @@ export function Contacto() {
         <div>
           <SectionHeading
             eyebrow="Ubicación y contacto"
-            title={<>Un taller cerca,<br /><span className="text-[#e5d00e]">una respuesta rápida.</span></>}
+            title={<>Un taller cerca,<br /><span className="bg-[#e5d00e] text-[#17212c] px-2 py-0.5 inline-block">una respuesta rápida.</span></>}
             text="Coordinemos para que conozcas el espacio o conversemos tu proyecto desde la Región Metropolitana, Chile."
           />
 
           {/* Datos de contacto: dirección, horario, teléfono, correo y cuentas de Instagram */}
           <div className="mt-10 space-y-4 border-t border-[#c6c7c1] pt-7 text-sm">
             <p className="flex items-start gap-3">
-              <MapPin className="mt-0.5 shrink-0 text-[#e5d00e]" size={19} />
+              <MapPin className="mt-0.5 shrink-0 text-[#17212c]" size={19} />
               <span>Av. María 6513, La Cisterna<br /><span className="text-xs text-[#7c8583]">Santiago, Chile</span></span>
             </p>
             <p className="flex items-center gap-3">
-              <Clock3 className="shrink-0 text-[#e5d00e]" size={19} />
+              <Clock3 className="shrink-0 text-[#17212c]" size={19} />
               <span>Lunes a viernes, de 8:00 a 18:00</span>
             </p>
             <p className="flex items-center gap-3">
-              <Phone className="shrink-0 text-[#e5d00e]" size={19} />
+              <Phone className="shrink-0 text-[#17212c]" size={19} />
               <span>{WHATSAPP_LABEL}</span>
             </p>
             <a
@@ -94,7 +94,7 @@ export function Contacto() {
               rel="noopener noreferrer"
               className="contact-link flex items-center gap-3"
             >
-              <Mail className="shrink-0 text-[#e5d00e]" size={19} />
+              <Mail className="shrink-0 text-[#17212c]" size={19} />
               <span>{CONTACT_EMAIL}</span>
             </a>
 
@@ -107,7 +107,7 @@ export function Contacto() {
                 rel="noopener noreferrer"
                 className="contact-link flex items-center gap-3"
               >
-                <Instagram className="shrink-0 text-[#e5d00e]" size={18} />
+                <Instagram className="shrink-0 text-[#17212c]" size={18} />
                 <span>@eminencia.industrial</span>
               </a>
               <a
@@ -116,7 +116,7 @@ export function Contacto() {
                 rel="noopener noreferrer"
                 className="contact-link flex items-center gap-3"
               >
-                <Instagram className="shrink-0 text-[#e5d00e]" size={18} />
+                <Instagram className="shrink-0 text-[#17212c]" size={18} />
                 <span>@eminencia.industrial.home</span>
               </a>
             </div>
@@ -126,7 +126,7 @@ export function Contacto() {
             href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="focus-ring mt-9 inline-flex items-center gap-3 border-b-2 border-[#e5d00e] pb-2 text-sm font-bold"
+            className="focus-ring mt-9 inline-flex items-center gap-3 border-b-2 border-[#17212c] pb-2 text-sm font-bold hover:opacity-80"
             data-testid="link-location-whatsapp"
           >
             Coordinar por WhatsApp <ArrowUpRight size={16} />
