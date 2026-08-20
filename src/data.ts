@@ -82,7 +82,7 @@ export const machinery = [
     name: 'Plegadora CNC',
     kicker: 'Formado controlado',
     description: 'Capacidad de 125 Toneladas para conformado de chapas y desarrollos a medida para gabinetes, soportes y estructuras listas para ensamblar.',
-    image: 'imagenes/plegadoracnc.jpeg',
+    image: '/imagenes/plegadoracnc.jpeg',
   },
   {
     name: 'Soldadura',
