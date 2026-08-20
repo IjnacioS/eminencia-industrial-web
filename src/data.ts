@@ -60,12 +60,12 @@ export const serviceItems: ServiceItem[] = [
 // IMÁGENES DE GALERÍA (referencias técnicas)
 // ============================================================
 export const galleryItems = [
-  { category: 'Corte láser' as const, title: 'Corte de plancha metálica', meta: 'Detalle de fabricación', image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=85' },
-  { category: 'Corte láser' as const, title: 'Fabricación industrial', meta: 'Pieza metálica', image: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1600&q=85' },
-  { category: 'Corte láser' as const, title: 'Trabajo de precisión', meta: 'Corte técnico', image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=85' },
-  { category: 'Plegado' as const, title: 'Plegadora en operación', meta: 'Chapa doblada', image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1600&q=85' },
-  { category: 'Plegado' as const, title: 'Pieza plegada', meta: 'Metal formado', image: 'https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&w=1600&q=85' },
-  { category: 'Plegado' as const, title: 'Taller de fabricación', meta: 'Proceso industrial', image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=85' },
+  { category: 'Corte láser' as const, title: 'Corte de plancha metálica', meta: 'Detalle de fabricación', image: '/imagenes/cortelaser1.jpg' },
+  { category: 'Corte láser' as const, title: 'Fabricación industrial', meta: 'Pieza metálica', image: '/imagenes/cortelaser2.png' },
+  { category: 'Corte láser' as const, title: 'Trabajo de precisión', meta: 'Corte técnico', image: '/imagenes/cortelaser3.png' },
+  { category: 'Plegado' as const, title: 'Plegadora en operación', meta: 'Chapa doblada', image: '/imagenes/plegado1.webp' },
+  { category: 'Plegado' as const, title: 'Pieza plegada', meta: 'Metal formado', image: '/imagenes/plegado2.png' },
+  { category: 'Plegado' as const, title: 'Taller de fabricación', meta: 'Proceso industrial', image: '/imagenes/plegado3.png' },
 ];
 
 // ============================================================
@@ -76,19 +76,19 @@ export const machinery = [
     name: 'Láser Fibra',
     kicker: 'Corte de precisión',
     description: 'Piezas metálicas de precisión de 1 a 12mm de espesor con tolerancias consistentes y bordes limpios.',
-    image: galleryItems[0].image,
+    image: '/imagenes/laserfibra.webp',
   },
   {
     name: 'Plegadora CNC',
     kicker: 'Formado controlado',
     description: 'Capacidad de 125 Toneladas para conformado de chapas y desarrollos a medida para gabinetes, soportes y estructuras listas para ensamblar.',
-    image: galleryItems[3].image,
+    image: 'imagenes/plegadoracnc.jpeg',
   },
   {
     name: 'Soldadura',
     kicker: 'Unión y fabricación',
     description: 'Soldadura profesional para estructuras, ensambles y trabajos de fabricación a medida con acabados de alta resistencia.',
-    image: galleryItems[5].image,
+    image: '/imagenes/soldadura.jpg',
   },
 ];
 
@@ -101,13 +101,13 @@ export const products = [
   { id: 'estructura', title: 'Estructura metálica', text: 'Componentes y conjuntos metálicos preparados para resolver una necesidad real.', tag: 'Función y escala', placeholder: 'Estructura industrial de corte láser' },
 ];
 
-// ============================================================
+// ============================================
 // SOCIOS — empresas con las que se ha trabajado
-// ============================================================
+// ============================================
 export const partners = [
-  { name: 'Nombre empresa 1' },
-  { name: 'Nombre empresa 2' },
-  { name: 'Nombre empresa 3' },
-  { name: 'Nombre empresa 4' },
-  { name: 'Nombre empresa 5' },
+  { name: 'nombre empresa 1', logo: '/imagenes/logo-empresa1.png' },
+  { name: 'Nombre empresa 2', logo: '/imagenes/logo-empresa2.png' },
+  { name: 'Nombre empresa 3', logo: '/imagenes/logo-empresa3.png' },
+  { name: 'Nombre empresa 4', logo: '/imagenes/logo-empresa4.png' },
+  { name: 'Nombre empresa 5', logo: '/imagenes/logo-empresa5.png' },
 ];
