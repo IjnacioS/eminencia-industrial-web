@@ -14,11 +14,11 @@ export function Logo() {
         alt="Eminencia Industrial"
         className="h-12 w-auto md:h-16"
       />
-      <span className="font-display leading-tight text-[#f3f0e8]">
-        <span className="block text-sm font-bold tracking-tight md:text-lg">
+      <span className="font-display flex flex-col leading-tight text-[#f3f0e8] md:flex-row md:items-baseline md:gap-2">
+        <span className="text-sm font-bold tracking-tight md:text-lg">
           EMINENCIA
         </span>
-        <span className="block text-sm font-bold tracking-tight text-[#e5d00e] md:text-lg">
+        <span className="text-sm font-bold tracking-tight text-[#e5d00e] md:text-lg">
           INDUSTRIAL
         </span>
       </span>

@@ -8,10 +8,10 @@ import { whatsappLink } from '../helpers';
 
 // Etiquetas de las 4 imágenes placeholder del hero
 const heroImages = [
-  { label: 'Corte láser', alt: 'Foto placeholder para corte láser' },
-  { label: 'Soldadura', alt: 'Foto placeholder para soldadura' },
-  { label: 'Plegado de metales', alt: 'Foto placeholder para plegado de metales' },
-  { label: 'Planimetría 3D', alt: 'Foto placeholder para planimetría 3D' },
+  { label: 'Corte láser', alt: 'Foto placeholder para soldadura', image: '/imagenes/cortelaser-hero.jpg' },
+  { label: 'Soldadura', alt: 'Foto placeholder para soldadura', image: '/imagenes/soldadura-hero.jpg' },
+  { label: 'Plegado de metales', alt: 'Foto placeholder para plegado de metales', image: '/imagenes/plegado-hero.jpg' },
+  { label: 'Planimetría 3D', alt: 'Foto placeholder para planimetría 3D', image: '/imagenes/planimetria-hero.jpg' },
 ];
 
 export function Hero() {
@@ -69,9 +69,18 @@ export function Hero() {
         {/* Columna derecha: grid 2×2 de imágenes placeholder */}
         <div className="hero-grid-images reveal reveal-delay-2">
           {heroImages.map((img) => (
-            <div key={img.label} className="hero-grid-cell" role="img" aria-label={img.alt}>
-              <ImageIcon size={32} className="text-[#e5d00e]/60" />
-              <span className="hero-grid-label">{img.label}</span>
+            <div key={img.label} className="hero-grid-cell relative overflow-hidden" role="img" aria-label={img.alt}>
+              {img.image ? (
+                <>
+                  <img src={img.image} alt={img.alt} className="h-full w-full object-cover" />
+                  <span className="hero-grid-label absolute bottom-3 left-3">{img.label}</span>
+                </>
+              ) : (
+                <>
+                  <ImageIcon size={32} className="text-[#e5d00e]/60" />
+                  <span className="hero-grid-label">{img.label}</span>
+                </>
+              )}
             </div>
           ))}
         </div>
