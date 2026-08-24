@@ -1,7 +1,5 @@
 // Productos.tsx — Sección "Algunas ideas para empezar"
-// Muestra 3 tarjetas de productos con imagen placeholder, título y descripción.
-// Las imágenes deben reemplazarse por fotos reales de:
-// 1) Pieza cortada con láser  2) Plano técnico de AutoCAD  3) Estructura industrial
+// Muestra 3 tarjetas de productos con imagen (o placeholder si aún no se cargó), título y descripción.
 
 import { ArrowUpRight, ImageIcon } from 'lucide-react';
 import { products } from '../data';
@@ -38,14 +36,25 @@ export function Productos() {
               className="group overflow-hidden border border-[#bec0ba] bg-[#f1efe8]"
               data-testid={`card-product-${product.id}`}
             >
-              {/* Espacio placeholder para la imagen del producto */}
-              <div className="product-placeholder">
-                <div className="product-placeholder-content">
-                  <ImageIcon size={24} className="text-[#e5d00e]/80" />
-                  <span className="product-placeholder-label">{product.placeholder}</span>
+              {/* Imagen del producto (o placeholder si todavía no se cargó una foto) */}
+              {product.image ? (
+                <div className="relative overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="h-52 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <span className="product-mark absolute bottom-3 left-3">Producto / 0{index + 1}</span>
                 </div>
-                <span className="product-mark">Producto / 0{index + 1}</span>
-              </div>
+              ) : (
+                <div className="product-image">
+                  <div className="product-placeholder-content">
+                    <ImageIcon size={24} className="text-[#e5d00e]/80" />
+                    <span className="product-placeholder-label">{product.image}</span>
+                  </div>
+                  <span className="product-mark">Producto / 0{index + 1}</span>
+                </div>
+              )}
 
               {/* Información del producto */}
               <div className="p-6">

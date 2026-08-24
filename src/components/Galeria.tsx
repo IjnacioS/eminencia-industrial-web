@@ -19,6 +19,16 @@ export function Galeria() {
   // Reiniciar al primer índice cuando cambia la categoría
   useEffect(() => setActiveIndex(0), [tab]);
 
+  // Precargar todas las imágenes de la categoría activa para que el
+  // deslizamiento entre fotos sea instantáneo (evita la demora al
+  // llegar por primera vez a una imagen que aún no se había descargado)
+  useEffect(() => {
+    visible.forEach((item) => {
+      const img = new window.Image();
+      img.src = item.image;
+    });
+  }, [visible]);
+
   // Avanzar o retroceder en el carrusel (con loop circular)
   const move = (direction: number) =>
     setActiveIndex((index) => (index + direction + visible.length) % visible.length);
@@ -74,7 +84,6 @@ export function Galeria() {
               alt={`${active.title}, ${active.meta}`}
               width="1600"
               height="1067"
-              loading="lazy"
               className="image-tint h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#111a23] via-transparent to-transparent opacity-95" />

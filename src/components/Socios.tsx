@@ -1,5 +1,5 @@
 // Socios.tsx — Sección "Gente con la que hemos trabajado"
-// Muestra 5 recuadros placeholder para logos de empresas asociadas.
+// Muestra los logos de empresas asociadas (o un placeholder si aún no tienen logo cargado).
 // En Mobile: Carrusel / slider horizontal deslizable (swipeable) uno a uno.
 // En Desktop: Cuadrícula fija de 5 columnas.
 
@@ -27,9 +27,15 @@ export function Socios() {
               data-testid={`card-partner-${index}`}
             >
               {/* Espacio para el logo de la empresa */}
-              <div className="partner-logo-placeholder">
-                <ImageIcon size={28} className="text-[#bdc4c9]" />
-                <span className="partner-logo-text">Logo aquí</span>
+              <div className={partner.image ? 'partner-logo-loaded' : 'partner-logo-placeholder'}>
+                {partner.image ? (
+                  <img src={partner.image} alt={partner.name} className="partner-logo-img" />
+                ) : (
+                  <>
+                    <ImageIcon size={28} className="text-[#bdc4c9]" />
+                    <span className="partner-logo-text">Logo aquí</span>
+                  </>
+                )}
               </div>
 
               {/* Nombre de la empresa */}

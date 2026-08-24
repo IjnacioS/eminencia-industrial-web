@@ -60,9 +60,9 @@ export const serviceItems: ServiceItem[] = [
 // IMÁGENES DE GALERÍA (referencias técnicas)
 // ============================================================
 export const galleryItems = [
-  { category: 'Corte láser' as const, title: 'Corte de plancha metálica', meta: 'Detalle de fabricación', image: '/imagenes/cortelaser1.jpg' },
-  { category: 'Corte láser' as const, title: 'Fabricación industrial', meta: 'Pieza metálica', image: '/imagenes/cortelaser2.png' },
-  { category: 'Corte láser' as const, title: 'Trabajo de precisión', meta: 'Corte técnico', image: '/imagenes/cortelaser3.png' },
+  { category: 'Corte láser' as const, title: 'Corte de plancha metálica', meta: 'Detalle de fabricación', image: '/imagenes/cortelaser1.webp' },
+  { category: 'Corte láser' as const, title: 'Fabricación industrial', meta: 'Pieza metálica', image: '/imagenes/cortelaser2.webp' },
+  { category: 'Corte láser' as const, title: 'Trabajo de precisión', meta: 'Corte técnico', image: '/imagenes/cortelaser3.webp' },
   { category: 'Plegado' as const, title: 'Plegadora en operación', meta: 'Chapa doblada', image: '/imagenes/plegado1.webp' },
   { category: 'Plegado' as const, title: 'Pieza plegada', meta: 'Metal formado', image: '/imagenes/plegado2.png' },
   { category: 'Plegado' as const, title: 'Taller de fabricación', meta: 'Proceso industrial', image: '/imagenes/plegado3.png' },
@@ -96,18 +96,18 @@ export const machinery = [
 // PRODUCTOS — sección "Algunas ideas para empezar"
 // ============================================================
 export const products = [
-  { id: 'pieza-medida', title: 'Pieza a medida', text: 'Una pieza diseñada alrededor de tus medidas, material y forma de uso.', tag: 'Para tu proyecto', placeholder: 'Pieza cortada con láser' },
-  { id: 'prototipo', title: 'Prototipo industrial', text: 'Una primera versión para validar proporciones, ensamble y fabricación.', tag: 'Iteración técnica', placeholder: 'Plano técnico de AutoCAD' },
-  { id: 'estructura', title: 'Estructura metálica', text: 'Componentes y conjuntos metálicos preparados para resolver una necesidad real.', tag: 'Función y escala', placeholder: 'Estructura industrial de corte láser' },
+  { id: 'pieza-medida', title: 'Pieza a medida', text: 'Una pieza diseñada alrededor de tus medidas, material y forma de uso.', tag: 'Para tu proyecto', image: '/imagenes/piezaamedida.webp' },
+  { id: 'prototipo', title: 'Prototipo industrial', text: 'Una primera versión para validar proporciones, ensamble y fabricación.', tag: 'Iteración técnica', image: '/imagenes/prototipoindustrial.webp' },
+  { id: 'estructura', title: 'Estructura metálica', text: 'Componentes y conjuntos metálicos preparados para resolver una necesidad real.', tag: 'Función y escala', image: '/imagenes/estructurametalica.webp' },
 ];
 
 // ============================================
 // SOCIOS — empresas con las que se ha trabajado
 // ============================================
 export const partners = [
-  { name: 'nombre empresa 1', logo: '/imagenes/logo-empresa1.png' },
-  { name: 'Nombre empresa 2', logo: '/imagenes/logo-empresa2.png' },
-  { name: 'Nombre empresa 3', logo: '/imagenes/logo-empresa3.png' },
-  { name: 'Nombre empresa 4', logo: '/imagenes/logo-empresa4.png' },
-  { name: 'Nombre empresa 5', logo: '/imagenes/logo-empresa5.png' },
+  { name: 'Caf', image: '/imagenes/caf.png' },
+  { name: 'Emecin Limitada', image: '/imagenes/emecin.png' },
+  { name: 'Geolab', image: '/imagenes/geolab.png' },
+  { name: 'Ingomar', image: '/imagenes/ingomar.png' },
+  { name: 'Pesamatic', image: '/imagenes/pesamatic.png' },
 ];
