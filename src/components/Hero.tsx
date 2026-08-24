@@ -6,12 +6,12 @@
 import { ArrowUpRight, ArrowDownRight, ShieldCheck, ImageIcon } from 'lucide-react';
 import { whatsappLink } from '../helpers';
 
-// Etiquetas de las 4 imágenes placeholder del hero
+// Etiquetas de las 4 imágenes del hero
 const heroImages = [
-  { label: 'Corte láser', alt: 'Foto placeholder para soldadura', image: '/imagenes/cortelaser-hero.jpg' },
-  { label: 'Soldadura', alt: 'Foto placeholder para soldadura', image: '/imagenes/soldadura-hero.jpg' },
-  { label: 'Plegado de metales', alt: 'Foto placeholder para plegado de metales', image: '/imagenes/plegado-hero.jpg' },
-  { label: 'Planimetría 3D', alt: 'Foto placeholder para planimetría 3D', image: '/imagenes/planimetria-hero.jpg' },
+  { label: 'Corte láser', alt: 'Corte láser de precisión en metales', image: '/imagenes/cortelaser-hero.jpg' },
+  { label: 'Soldadura', alt: 'Soldadura industrial TIG y MIG', image: '/imagenes/soldadura-hero.jpg' },
+  { label: 'Plegado de metales', alt: 'Plegado CNC de planchas metálicas', image: '/imagenes/plegado-hero.jpg' },
+  { label: 'Planimetría 3D', alt: 'Planimetría y modelado técnico 3D', image: '/imagenes/planimetria-hero.jpg' },
 ];
 
 export function Hero() {
@@ -66,14 +66,26 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Columna derecha: grid 2×2 de imágenes placeholder */}
+        {/* Columna derecha: grid 2×2 de imágenes */}
         <div className="hero-grid-images reveal reveal-delay-2">
           {heroImages.map((img) => (
-            <div key={img.label} className="hero-grid-cell relative overflow-hidden" role="img" aria-label={img.alt}>
+            <div
+              key={img.label}
+              className="hero-grid-cell group relative overflow-hidden"
+              role="img"
+              aria-label={img.alt}
+            >
               {img.image ? (
                 <>
-                  <img src={img.image} alt={img.alt} className="h-full w-full object-cover" />
-                  <span className="hero-grid-label absolute bottom-3 left-3">{img.label}</span>
+                  <img
+                    src={img.image}
+                    alt={img.alt}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  {/* Overlay degradado oscuro para garantizar legibilidad óptima */}
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#111a23]/90 via-[#111a23]/60 to-transparent px-3 py-2.5 pt-8 text-left">
+                    <span className="hero-grid-label inline-block">{img.label}</span>
+                  </div>
                 </>
               ) : (
                 <>
