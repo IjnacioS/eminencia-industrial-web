@@ -60,9 +60,15 @@ export const serviceItems: ServiceItem[] = [
 // IMÁGENES DE GALERÍA (referencias técnicas)
 // ============================================================
 export const galleryItems = [
-  { category: 'Corte láser' as const, title: 'Corte de plancha metálica', meta: 'Detalle de fabricación', image: '/imagenes/cortelaser1.webp' },
-  { category: 'Corte láser' as const, title: 'Fabricación industrial', meta: 'Pieza metálica', image: '/imagenes/cortelaser2.webp' },
-  { category: 'Corte láser' as const, title: 'Trabajo de precisión', meta: 'Corte técnico', image: '/imagenes/cortelaser3.webp' },
+  { category: 'Corte láser' as const, title: 'Corte de plancha metálica', meta: 'Detalle de fabricación', image: '/imagenes/cortelaser1.jpg' },
+  { category: 'Corte láser' as const, title: 'Fabricación industrial', meta: 'Pieza metálica', image: '/imagenes/cortelaser2.jpg' },
+  { category: 'Corte láser' as const, title: 'Trabajo de precisión', meta: 'Corte técnico', image: '/imagenes/cortelaser3.jpg' },
+  { category: 'Corte láser' as const, title: 'Piezas circulares cortadas', meta: 'Discos de acero', image: '/imagenes/cortelaser4.jpg' },
+  { category: 'Corte láser' as const, title: 'Corte en proceso', meta: 'Chispas de precisión', image: '/imagenes/cortelaser5.jpg' },
+  { category: 'Corte láser' as const, title: 'Programación de corte', meta: 'Planimetría en pantalla', image: '/imagenes/cortelaser6.jpg' },
+  { category: 'Corte láser' as const, title: 'Planchas cortadas apiladas', meta: 'Lote de producción', image: '/imagenes/cortelaser7.jpg' },
+  { category: 'Corte láser' as const, title: 'Piezas plegadas en L', meta: 'Terminación en negro', image: '/imagenes/cortelaser9.jpg' },
+  { category: 'Corte láser' as const, title: 'Piezas de fijación', meta: 'Componentes con perforaciones', image: '/imagenes/cortelaser12.webp' },
   { category: 'Plegado' as const, title: 'Plegadora en operación', meta: 'Chapa doblada', image: '/imagenes/plegado1.webp' },
   { category: 'Plegado' as const, title: 'Pieza plegada', meta: 'Metal formado', image: '/imagenes/plegado2.png' },
   { category: 'Plegado' as const, title: 'Taller de fabricación', meta: 'Proceso industrial', image: '/imagenes/plegado3.png' },
