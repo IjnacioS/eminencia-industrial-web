@@ -1,5 +1,5 @@
 // Galeria.tsx — Sección de galería de trabajos realizados
-// Carrusel con imágenes filtradas por categoría (Corte láser / Plegado).
+// Carrusel con imágenes filtradas por categoría (Corte láser / Plegado / Proyectos).
 // Proporción adaptativa (4:3 en mobile, 16:9 en desktop).
 
 import { useEffect, useMemo, useState } from 'react';
@@ -9,7 +9,7 @@ import { SectionHeading } from './SectionHeading';
 
 export function Galeria() {
   // Estado del tab activo (categoría) y de la imagen seleccionada
-  const [tab, setTab] = useState<'Corte láser' | 'Plegado'>('Corte láser');
+  const [tab, setTab] = useState<'Corte láser' | 'Plegado' | 'Proyectos'>('Corte láser');
   const [activeIndex, setActiveIndex] = useState(0);
 
   // Filtrar imágenes según la categoría seleccionada
@@ -47,7 +47,7 @@ export function Galeria() {
 
           {/* Pestañas para filtrar por categoría */}
           <div className="flex border-b border-white/20" role="tablist" aria-label="Categorías de galería">
-            {(['Corte láser', 'Plegado'] as const).map((item) => (
+            {(['Corte láser', 'Plegado', 'Proyectos'] as const).map((item) => (
               <button
                 type="button"
                 key={item}
