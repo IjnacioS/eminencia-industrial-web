@@ -15,10 +15,10 @@ export const CONTACT_EMAIL = 'EminenciaIndustrial@gmail.com';
 // ============================================================
 export const navItems: [string, string][] = [
   ['Inicio', 'inicio'],
-  ['Servicios', 'servicios'],
+  ['Galería', 'galeria'],
   ['Nuestra maquinaria', 'maquinaria'],
   ['Socios', 'socios'],
-  ['Galería', 'galeria'],
+  ['Servicios', 'servicios'],
   ['Productos', 'productos'],
   ['Sobre mí', 'sobre-mi'],
   ['Contacto', 'contacto'],

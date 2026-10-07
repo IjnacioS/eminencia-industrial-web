@@ -37,7 +37,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-8 max-w-[570px] text-base leading-7 text-[#bdc4c9] md:text-lg">
-            Procesamos acero, acero inoxidable, aluminio y acrílico con rapidez, precisión y atención directa para que tu proyecto encaje a la primera.
+            Procesamos acero al carbono, acero inoxidable y aluminio con rapidez, precisión y atención directa para que tu proyecto quede a la perfeccion.
           </p>
 
           {/* Botones principales de acción */}

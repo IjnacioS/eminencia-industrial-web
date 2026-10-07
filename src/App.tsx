@@ -8,10 +8,10 @@ import { FaWhatsapp } from 'react-icons/fa';
 // Importación de componentes de cada sección
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { Servicios } from './components/Servicios';
+import { Galeria } from './components/Galeria';
 import { Maquinaria } from './components/Maquinaria';
 import { Socios } from './components/Socios';
-import { Galeria } from './components/Galeria';
+import { Servicios } from './components/Servicios';
 import { Productos } from './components/Productos';
 import { SobreMi } from './components/SobreMi';
 import { Contacto } from './components/Contacto';
@@ -34,10 +34,10 @@ function App() {
       {/* Secciones de contenido del sitio */}
       <main>
         <Hero />
-        <Servicios />
+        <Galeria />
         <Maquinaria />
         <Socios />
-        <Galeria />
+        <Servicios />
         <Productos />
         <SobreMi />
         <Contacto />
