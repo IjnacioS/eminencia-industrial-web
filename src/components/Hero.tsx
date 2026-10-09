@@ -66,7 +66,7 @@ export function Hero() {
               <ShieldCheck size={18} className="text-[#e5d00e]" /> Calidad de taller, trato directo.
             </div>
             <div className="flex items-center gap-2">
-              <Truck size={18} className="text-[#e5d00e]" /> Envíos en todo Santiago y regiones.
+              <Truck size={18} className="text-[#e5d00e]" /> Envíos en todo Santiago.
             </div>
           </div>
         </div>
