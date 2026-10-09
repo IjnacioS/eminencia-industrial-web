@@ -31,7 +31,7 @@ export function Contacto() {
           <div className="mt-10 space-y-4 border-t border-[#c6c7c1] pt-7 text-sm">
             <p className="flex items-start gap-3">
               <MapPin className="mt-0.5 shrink-0 text-[#17212c]" size={19} />
-              <span>Av. María 6513, La Cisterna<br /><span className="text-xs text-[#7c8583]">Santiago, Chile</span></span>
+              <span>Av. María 6513, La Cisterna<br /><span className="text-xs text-[#7c8583]">Región Metropolitana, Chile</span></span>
             </p>
             <p className="flex items-center gap-3">
               <Truck className="shrink-0 text-[#17212c]" size={19} />
@@ -96,7 +96,7 @@ export function Contacto() {
           {/* Mapa embebido de Snazzy Maps */}
           <div className="min-h-[280px] overflow-hidden border border-[#c6c7c1] md:col-span-2">
             <iframe
-              src="https://www.google.com/maps?q=-33.5185417,-70.6522695&hl=es&z=17&output=embed"
+              src="https://maps.google.com/maps?q=Av.+Mar%C3%ADa+6513%2C+La+Cisterna%2C+Regi%C3%B3n+Metropolitana%2C+Chile&hl=es&z=17&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: 280 }}

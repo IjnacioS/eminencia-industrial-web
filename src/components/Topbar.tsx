@@ -13,7 +13,7 @@ import { getEmailLink, handleEmailClick, isMobileDevice, whatsappLink } from '..
 
 // Enlace directo a Google Maps para la dirección física
 const GOOGLE_MAPS_URL =
-  'https://www.google.com/maps/search/?api=1&query=Av.+Mar%C3%ADa+6513%2C+La+Cisterna%2C+Santiago%2C+Chile';
+  'https://www.google.com/maps/search/?api=1&query=Eminencia+Industrial';
 
 export function Topbar() {
   const [emailHref, setEmailHref] = useState(`mailto:${CONTACT_EMAIL}`);
