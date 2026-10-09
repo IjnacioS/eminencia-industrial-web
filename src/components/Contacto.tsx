@@ -2,7 +2,7 @@
 // Incluye datos de contacto reales, enlaces a Instagram, botón inteligente de correo (Gmail en PC / App en Móvil) y mapa embebido (Snazzy Maps).
 
 import { useEffect, useState } from 'react';
-import { ArrowUpRight, Clock3, Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowUpRight, Clock3, Instagram, Mail, MapPin, Phone, Truck } from 'lucide-react';
 import { CONTACT_EMAIL, WHATSAPP_LABEL } from '../data';
 import { getEmailLink, handleEmailClick, isMobileDevice, whatsappLink } from '../helpers';
 import { SectionHeading } from './SectionHeading';
@@ -25,13 +25,17 @@ export function Contacto() {
           <SectionHeading
             eyebrow="Ubicación y contacto"
             title={<>Un taller cerca,<br /><span className="bg-[#e5d00e] text-[#17212c] px-2 py-0.5 inline-block">una respuesta rápida.</span></>}
-            text="Coordinemos para que conozcas el espacio o conversemos tu proyecto desde la Región Metropolitana, Chile."
+            text="Coordinemos para que conozcas el taller en Santiago o conversemos los detalles de tu proyecto por WhatsApp y correo."
           />
 
           <div className="mt-10 space-y-4 border-t border-[#c6c7c1] pt-7 text-sm">
             <p className="flex items-start gap-3">
               <MapPin className="mt-0.5 shrink-0 text-[#17212c]" size={19} />
               <span>Av. María 6513, La Cisterna<br /><span className="text-xs text-[#7c8583]">Santiago, Chile</span></span>
+            </p>
+            <p className="flex items-center gap-3">
+              <Truck className="shrink-0 text-[#17212c]" size={19} />
+              <span>Envíos en todo Santiago y despachos a regiones</span>
             </p>
             <p className="flex items-center gap-3">
               <Clock3 className="shrink-0 text-[#17212c]" size={19} />

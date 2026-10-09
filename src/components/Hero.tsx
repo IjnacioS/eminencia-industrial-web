@@ -3,7 +3,7 @@
 // y un grid de 4 imágenes placeholder que deben reemplazarse por fotos reales de:
 // 1) Corte láser  2) Soldadura  3) Plegado de metales  4) Planimetría 3D
 
-import { ArrowUpRight, ArrowDownRight, ShieldCheck, ImageIcon } from 'lucide-react';
+import { ArrowUpRight, ArrowDownRight, ShieldCheck, Truck, ImageIcon } from 'lucide-react';
 import { whatsappLink } from '../helpers';
 
 // Etiquetas de las 4 imágenes del hero
@@ -27,7 +27,7 @@ export function Hero() {
         {/* Columna izquierda: título, subtexto y botones de acción */}
         <div className="reveal">
           <p className="eyebrow mb-6 flex items-center gap-3">
-            <span className="inline-block h-px w-10 bg-[#e5d00e]" /> Fabricación digital en Chile
+            <span className="inline-block h-px w-10 bg-[#e5d00e]" /> Fabricación digital en Santiago, Chile
           </p>
 
           {/* Título principal del sitio (único h1 de toda la página) */}
@@ -37,7 +37,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-8 max-w-[570px] text-base leading-7 text-[#bdc4c9] md:text-lg">
-            Procesamos acero al carbono, acero inoxidable y aluminio con rapidez, precisión y atención directa para que tu proyecto quede a la perfeccion.
+            Procesamos acero al carbono, acero inoxidable y aluminio con rapidez, precisión y atención directa para que tu proyecto quede a la perfección.
           </p>
 
           {/* Botones principales de acción */}
@@ -60,9 +60,14 @@ export function Hero() {
             </a>
           </div>
 
-          {/* Sello de confianza debajo de los botones */}
-          <div className="mt-12 flex items-center gap-3 text-xs text-[#bdc4c9]">
-            <ShieldCheck size={18} className="text-[#e5d00e]" /> Calidad de taller, trato directo.
+          {/* Sellos de confianza y envíos debajo de los botones */}
+          <div className="mt-12 flex flex-wrap items-center gap-6 text-xs text-[#bdc4c9]">
+            <div className="flex items-center gap-2">
+              <ShieldCheck size={18} className="text-[#e5d00e]" /> Calidad de taller, trato directo.
+            </div>
+            <div className="flex items-center gap-2">
+              <Truck size={18} className="text-[#e5d00e]" /> Envíos en todo Santiago y regiones.
+            </div>
           </div>
         </div>
 

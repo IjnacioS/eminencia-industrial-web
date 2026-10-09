@@ -32,6 +32,7 @@ export interface ServiceItem {
   image: string;
   number: string;
   title: string;
+  description: string;
   alt: string;
 }
 
@@ -40,18 +41,35 @@ export const serviceItems: ServiceItem[] = [
     image: '/services/corte-laser.svg',
     number: '01',
     title: 'Corte láser',
+    description: 'Corte de alta precisión con láser de fibra de 1 a 12 mm de espesor en acero al carbono, acero inoxidable y aluminio.',
     alt: 'Ilustración técnica de cabezal de corte láser',
   },
   {
-    image: '/services/grabado-piezas.svg',
+    image: '/services/plegado-cnc.svg',
     number: '02',
+    title: 'Plegado CNC',
+    description: 'Conformado y doblado de chapas con plegadora CNC de 125 toneladas para acero al carbono, acero inoxidable y aluminio.',
+    alt: 'Ilustración técnica de plegadora CNC',
+  },
+  {
+    image: '/services/soldadura.svg',
+    number: '03',
+    title: 'Soldadura',
+    description: 'Unión y armado de piezas y estructuras en acero al carbono, acero inoxidable y aluminio con alta resistencia.',
+    alt: 'Ilustración técnica de proceso de soldadura',
+  },
+  {
+    image: '/services/grabado-piezas.svg',
+    number: '04',
     title: 'Grabado de piezas',
+    description: 'Marcado y grabado técnico para identificación de componentes, numeración de piezas y detalles de fabricación.',
     alt: 'Ilustración técnica de grabado y mecanizado de piezas',
   },
   {
     image: '/services/planimetria.svg',
-    number: '03',
+    number: '05',
     title: 'Planimetría',
+    description: 'Modelado 3D, desarrollo y adaptación de planos técnicos para optimizar el corte y fabricación de cada pieza.',
     alt: 'Ilustración técnica de plano y planimetría',
   },
 ];

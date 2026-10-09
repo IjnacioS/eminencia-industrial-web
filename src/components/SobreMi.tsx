@@ -15,7 +15,7 @@ export function SobreMi() {
         <div className="flex flex-col items-center">
           <SectionHeading
             eyebrow="Sobre mí"
-            title={<>Una persona al otro lado<br />de cada <span className="bg-[#e5d00e] text-[#17212c] px-2 py-0.5 inline-block">presupuesto.</span></>}
+            title={<>Ingeniería y taller de fabricación en <span className="bg-[#e5d00e] text-[#17212c] px-2 py-0.5 inline-block">Santiago.</span></>}
             text="Soy Cristóbal Martínez, ingeniero mecánico, con más de 10 años de experiencia como jefe de producción, y actualmente director de Eminencia Industrial."
           />
         </div>
@@ -25,7 +25,7 @@ export function SobreMi() {
           <div className="flex items-baseline justify-center gap-4">
             <strong className="font-display text-4xl font-bold text-[#17212c] md:text-5xl">+10</strong>
             <p className="font-mono text-xs uppercase tracking-widest text-[#69716f] md:text-sm">
-              Años de oficio en fabricación y metalmecánica
+              Años de oficio en fabricación industrial
             </p>
           </div>
         </div>

@@ -19,16 +19,6 @@ export function Galeria() {
   // Reiniciar al primer índice cuando cambia la categoría
   useEffect(() => setActiveIndex(0), [tab]);
 
-  // Precargar todas las imágenes de la categoría activa para que el
-  // deslizamiento entre fotos sea instantáneo (evita la demora al
-  // llegar por primera vez a una imagen que aún no se había descargado)
-  useEffect(() => {
-    visible.forEach((item) => {
-      const img = new window.Image();
-      img.src = item.image;
-    });
-  }, [visible]);
-
   // Avanzar o retroceder en el carrusel (con loop circular)
   const move = (direction: number) =>
     setActiveIndex((index) => (index + direction + visible.length) % visible.length);
@@ -41,7 +31,7 @@ export function Galeria() {
           <SectionHeading
             light
             eyebrow="Trabajo de referencia"
-            title={<>Piezas que hablan<br />por sí <span className="text-[#e5d00e]">solas.</span></>}
+            title={<>Trabajos de corte láser, plegado y <span className="text-[#e5d00e]">soldadura.</span></>}
             text="Muestras de corte técnico, plegado y terminaciones de precisión para proyectos industriales."
           />
 
@@ -70,37 +60,54 @@ export function Galeria() {
         {/* Carrusel de imágenes */}
         <div className="carousel-stage mt-14" aria-roledescription="carrusel" aria-label={`Galería de ${tab}`}>
           {/* Flechas de navegación izquierda/derecha */}
-          <button type="button" onClick={() => move(-1)} className="carousel-arrow prev focus-ring" aria-label="Imagen anterior" data-testid="button-gallery-prev">
+          <button
+            type="button"
+            onClick={() => move(-1)}
+            className="carousel-arrow prev focus-ring z-20 cursor-pointer"
+            aria-label="Imagen anterior"
+            data-testid="button-gallery-prev"
+          >
             <ChevronLeft size={23} />
           </button>
-          <button type="button" onClick={() => move(1)} className="carousel-arrow next focus-ring" aria-label="Imagen siguiente" data-testid="button-gallery-next">
+          <button
+            type="button"
+            onClick={() => move(1)}
+            className="carousel-arrow next focus-ring z-20 cursor-pointer"
+            aria-label="Imagen siguiente"
+            data-testid="button-gallery-next"
+          >
             <ChevronRight size={23} />
           </button>
 
           {/* Imagen activa — proporción uniforme con aspect-ratio */}
           <div className="gallery-image-wrapper">
-            <img
-              src={active.image}
-              alt={`${active.title}, ${active.meta}`}
-              width="1600"
-              height="1067"
-              className="image-tint h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#111a23] via-transparent to-transparent opacity-95" />
-            <div className="absolute bottom-8 left-8">
-              <p className="font-display text-2xl font-bold md:text-3xl">{active.title}</p>
-              <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-[#e5d00e]">{active.meta}</p>
-            </div>
+            {active && (
+              <>
+                <img
+                  key={active.image}
+                  src={active.image}
+                  alt={`${active.title}, ${active.meta}`}
+                  width="1600"
+                  height="1067"
+                  className="image-tint h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111a23] via-transparent to-transparent opacity-95 pointer-events-none" />
+                <div className="absolute bottom-8 left-8 pointer-events-none">
+                  <p className="font-display text-2xl font-bold md:text-3xl">{active.title}</p>
+                  <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-[#e5d00e]">{active.meta}</p>
+                </div>
+              </>
+            )}
           </div>
 
           {/* Indicadores de posición (puntos) */}
-          <div className="carousel-progress" role="tablist" aria-label="Imágenes de la categoría">
+          <div className="carousel-progress z-20" role="tablist" aria-label="Imágenes de la categoría">
             {visible.map((item, index) => (
               <button
                 type="button"
-                key={item.title}
+                key={`${item.image}-${index}`}
                 onClick={() => setActiveIndex(index)}
-                className="carousel-dot focus-ring"
+                className="carousel-dot focus-ring cursor-pointer"
                 role="tab"
                 aria-selected={index === activeIndex}
                 aria-label={`Ver imagen ${index + 1}: ${item.title}`}
