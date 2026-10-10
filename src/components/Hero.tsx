@@ -1,17 +1,36 @@
 // Hero.tsx — Sección de inicio (Hero)
-// Es lo primero que se ve al abrir el sitio. Contiene el título principal
-// y un grid de 4 imágenes placeholder que deben reemplazarse por fotos reales de:
-// 1) Corte láser  2) Soldadura  3) Plegado de metales  4) Planimetría 3D
+// H1 optimizado para SEO: "Corte láser y plegado CNC en Santiago"
+// Las frases "Piezas que hablan por sí solas" y "Del plano a la pieza" quedan como subtítulos (p)
 
-import { ArrowUpRight, ArrowDownRight, ShieldCheck, Truck, ImageIcon } from 'lucide-react';
+import { ArrowUpRight, ArrowDownRight, ShieldCheck, Truck } from 'lucide-react';
 import { whatsappLink } from '../helpers';
 
-// Etiquetas de las 4 imágenes del hero
+// Etiquetas de las 4 imágenes del hero — primera sin lazy (LCP), resto con lazy
 const heroImages = [
-  { label: 'Corte láser', alt: 'Corte láser de precisión en metales', image: '/imagenes/cortelaser-hero.jpg' },
-  { label: 'Soldadura', alt: 'Soldadura industrial TIG y MIG', image: '/imagenes/soldadura-hero.jpg' },
-  { label: 'Plegado de metales', alt: 'Plegado CNC de planchas metálicas', image: '/imagenes/plegado-hero.jpg' },
-  { label: 'Planimetría 3D', alt: 'Planimetría y modelado técnico 3D', image: '/imagenes/planimetria-hero.jpg' },
+  {
+    label: 'Corte láser',
+    alt: 'Corte láser de precisión en acero, aluminio e inoxidable — Eminencia Industrial',
+    image: '/imagenes/cortelaser-hero.jpg',
+    priority: true,
+  },
+  {
+    label: 'Soldadura',
+    alt: 'Soldadura industrial TIG y MIG de estructuras metálicas en Santiago',
+    image: '/imagenes/soldadura-hero.jpg',
+    priority: false,
+  },
+  {
+    label: 'Plegado de metales',
+    alt: 'Plegado CNC de planchas metálicas con plegadora de 125 toneladas',
+    image: '/imagenes/plegado-hero.jpg',
+    priority: false,
+  },
+  {
+    label: 'Planimetría 3D',
+    alt: 'Planimetría y modelado técnico 3D para proyectos de fabricación industrial',
+    image: '/imagenes/planimetria-hero.jpg',
+    priority: false,
+  },
 ];
 
 export function Hero() {
@@ -30,14 +49,20 @@ export function Hero() {
             <span className="inline-block h-px w-10 bg-[#e5d00e]" /> Fabricación digital en Santiago, Chile
           </p>
 
-          {/* Título principal del sitio (único h1 de toda la página) */}
+          {/* H1 optimizado para SEO — único H1 de la home */}
           <h1 className="max-w-[720px] font-display text-[clamp(2.9rem,7.2vw,6.3rem)] font-bold leading-[.92] tracking-[-.07em]">
-            Ingeniería en corte láser, plegado, soldadura y proyectos en{' '}
-            <span className="text-[#e5d00e]">general.</span>
+            Corte láser y plegado CNC en{' '}
+            <span className="text-[#e5d00e]">Santiago.</span>
           </h1>
 
-          <p className="mt-8 max-w-[570px] text-base leading-7 text-[#bdc4c9] md:text-lg">
-            Procesamos acero al carbono, acero inoxidable y aluminio con rapidez, precisión y atención directa para que tu proyecto quede a la perfección.
+          {/* Subtítulos: frases de marca como párrafos, NO como H1 */}
+          <p className="mt-5 font-display text-xl font-semibold text-[#bdc4c9] md:text-2xl">
+            Piezas que hablan por sí solas.
+          </p>
+
+          <p className="mt-4 max-w-[570px] text-base leading-7 text-[#bdc4c9] md:text-lg">
+            Procesamos acero al carbono, acero inoxidable y aluminio de 1 a 12 mm con rapidez,
+            precisión y atención directa para que tu proyecto quede perfecto.
           </p>
 
           {/* Botones principales de acción */}
@@ -60,7 +85,7 @@ export function Hero() {
             </a>
           </div>
 
-          {/* Sellos de confianza y envíos debajo de los botones */}
+          {/* Sellos de confianza */}
           <div className="mt-12 flex flex-wrap items-center gap-6 text-xs text-[#bdc4c9]">
             <div className="flex items-center gap-2">
               <ShieldCheck size={18} className="text-[#e5d00e]" /> Calidad de taller, trato directo.
@@ -77,27 +102,21 @@ export function Hero() {
             <div
               key={img.label}
               className="hero-grid-cell group relative overflow-hidden"
-              role="img"
-              aria-label={img.alt}
             >
-              {img.image ? (
-                <>
-                  <img
-                    src={img.image}
-                    alt={img.alt}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  {/* Overlay degradado oscuro para garantizar legibilidad óptima */}
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#111a23]/90 via-[#111a23]/60 to-transparent px-3 py-2.5 pt-8 text-left">
-                    <span className="hero-grid-label inline-block">{img.label}</span>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <ImageIcon size={32} className="text-[#e5d00e]/60" />
-                  <span className="hero-grid-label">{img.label}</span>
-                </>
-              )}
+              <img
+                src={img.image}
+                alt={img.alt}
+                width="800"
+                height="600"
+                loading={img.priority ? 'eager' : 'lazy'}
+                decoding={img.priority ? 'sync' : 'async'}
+                fetchPriority={img.priority ? 'high' : 'auto'}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              {/* Overlay degradado oscuro para garantizar legibilidad óptima */}
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#111a23]/90 via-[#111a23]/60 to-transparent px-3 py-2.5 pt-8 text-left">
+                <span className="hero-grid-label inline-block">{img.label}</span>
+              </div>
             </div>
           ))}
         </div>

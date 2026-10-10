@@ -1,18 +1,44 @@
 // Header.tsx — Barra de navegación superior completa
 // Incluye la barra superior de información rápida (Topbar) y el menú principal (Navbar).
+// isServicePage=true hace que los ítems usen rutas absolutas en vez de anclas #
 
 import { Menu, MessageCircle, X } from 'lucide-react';
-import { navItems } from '../data';
 import { whatsappLink } from '../helpers';
 import { Logo } from './Logo';
 import { Topbar } from './Topbar';
 
+// Ítems de navegación: [label, anchor-id, ruta-de-página-opcional]
+const NAV_ITEMS: [string, string, string?][] = [
+  ['Inicio', 'inicio', '/'],
+  ['Galería', 'galeria'],
+  ['Nuestra maquinaria', 'maquinaria'],
+  ['Socios', 'socios'],
+  ['Servicios', 'servicios'],
+  ['Productos', 'productos'],
+  ['Sobre mí', 'sobre-mi'],
+  ['Contacto', 'contacto'],
+];
+
 interface HeaderProps {
   open: boolean;
   onToggle: () => void;
+  /** true cuando estamos en una página interna (no la home) */
+  isServicePage?: boolean;
 }
 
-export function Header({ open, onToggle }: HeaderProps) {
+export function Header({ open, onToggle, isServicePage = false }: HeaderProps) {
+  /**
+   * Genera el href correcto según el contexto:
+   * - En la home: ancla #id
+   * - En página interna: /#id (vuelve a la home y hace scroll)
+   * - Si el ítem tiene ruta propia: usa esa ruta
+   */
+  function getHref(id: string, route?: string): string {
+    if (route && route !== '/') return route;
+    if (isServicePage) return `/#${id}`;
+    return `#${id}`;
+  }
+
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-[#17212c]/95 backdrop-blur-md">
       {/* 1. Barra superior de contacto rápido (Interactiva) */}
@@ -28,10 +54,10 @@ export function Header({ open, onToggle }: HeaderProps) {
             } absolute left-0 right-0 top-full flex-col gap-1 border-b border-white/10 bg-[#17212c] p-4 shadow-2xl md:static md:flex md:flex-row md:items-center md:gap-4 md:border-0 md:bg-transparent md:p-0 md:shadow-none`}
           aria-label="Navegación principal"
         >
-          {navItems.map(([label, id]) => (
+          {NAV_ITEMS.map(([label, id, route]) => (
             <a
               key={id}
-              href={`#${id}`}
+              href={getHref(id, route)}
               onClick={open ? onToggle : undefined}
               className="focus-ring px-2 py-3 text-[10px] font-semibold uppercase tracking-[.1em] text-[#bdc4c9] transition-colors hover:text-[#e5d00e] md:px-0 md:py-2"
               data-testid={`link-nav-${id}`}
@@ -58,7 +84,7 @@ export function Header({ open, onToggle }: HeaderProps) {
           type="button"
           onClick={onToggle}
           className="focus-ring absolute right-0 flex h-11 w-11 items-center justify-center text-[#f3f0e8] md:hidden"
-          aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+          aria-label={open ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'}
           aria-expanded={open}
           data-testid="button-mobile-menu"
         >

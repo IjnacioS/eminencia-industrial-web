@@ -1,5 +1,7 @@
 // Galeria.tsx — Sección de galería de trabajos realizados
-// Carrusel con imágenes filtradas por categoría (Corte láser / Plegado / Proyectos).
+// CAMBIO SEO: Todas las imágenes de TODAS las categorías existen en el DOM.
+// Las inactivas se ocultan visualmente con CSS (aria-hidden + hidden class) pero
+// el motor de búsqueda puede indexarlas al leer el HTML prerenderizado.
 // Proporción adaptativa (4:3 en mobile, 16:9 en desktop).
 
 import { useEffect, useMemo, useState } from 'react';
@@ -7,9 +9,11 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { galleryItems } from '../data';
 import { SectionHeading } from './SectionHeading';
 
+type GalleryCategory = 'Corte láser' | 'Plegado' | 'Proyectos';
+const CATEGORIES: GalleryCategory[] = ['Corte láser', 'Plegado', 'Proyectos'];
+
 export function Galeria() {
-  // Estado del tab activo (categoría) y de la imagen seleccionada
-  const [tab, setTab] = useState<'Corte láser' | 'Plegado' | 'Proyectos'>('Corte láser');
+  const [tab, setTab] = useState<GalleryCategory>('Corte láser');
   const [activeIndex, setActiveIndex] = useState(0);
 
   // Filtrar imágenes según la categoría seleccionada
@@ -37,18 +41,17 @@ export function Galeria() {
 
           {/* Pestañas para filtrar por categoría */}
           <div className="flex border-b border-white/20" role="tablist" aria-label="Categorías de galería">
-            {(['Corte láser', 'Plegado', 'Proyectos'] as const).map((item) => (
+            {CATEGORIES.map((item) => (
               <button
                 type="button"
                 key={item}
                 role="tab"
                 aria-selected={tab === item}
                 onClick={() => setTab(item)}
-                className={`focus-ring border-b-2 px-4 py-3 text-xs font-bold uppercase tracking-wider transition-colors ${
-                  tab === item
+                className={`focus-ring border-b-2 px-4 py-3 text-xs font-bold uppercase tracking-wider transition-colors ${tab === item
                     ? 'border-[#e5d00e] text-[#e5d00e]'
                     : 'border-transparent text-[#8c979b] hover:text-[#f3f0e8]'
-                }`}
+                  }`}
                 data-testid={`button-gallery-tab-${item.toLowerCase().replace(' ', '-')}`}
               >
                 {item}
@@ -64,7 +67,7 @@ export function Galeria() {
             type="button"
             onClick={() => move(-1)}
             className="carousel-arrow prev focus-ring z-20 cursor-pointer"
-            aria-label="Imagen anterior"
+            aria-label="Ver imagen anterior de la galería"
             data-testid="button-gallery-prev"
           >
             <ChevronLeft size={23} />
@@ -73,34 +76,58 @@ export function Galeria() {
             type="button"
             onClick={() => move(1)}
             className="carousel-arrow next focus-ring z-20 cursor-pointer"
-            aria-label="Imagen siguiente"
+            aria-label="Ver imagen siguiente de la galería"
             data-testid="button-gallery-next"
           >
             <ChevronRight size={23} />
           </button>
 
-          {/* Imagen activa — proporción uniforme con aspect-ratio */}
+          {/* Contenedor de imágenes — TODAS en el DOM para indexación */}
           <div className="gallery-image-wrapper">
-            {active && (
-              <>
-                <img
-                  key={active.image}
-                  src={active.image}
-                  alt={`${active.title}, ${active.meta}`}
-                  width="1600"
-                  height="1067"
-                  className="image-tint h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111a23] via-transparent to-transparent opacity-95 pointer-events-none" />
-                <div className="absolute bottom-8 left-8 pointer-events-none">
-                  <p className="font-display text-2xl font-bold md:text-3xl">{active.title}</p>
-                  <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-[#e5d00e]">{active.meta}</p>
+            {/*
+             * SEO: todas las imágenes de TODAS las categorías están en el DOM.
+             * Las inactivas usan aria-hidden y visibility:hidden para que el HTML
+             * prerenderizado las incluya pero no interfieran con el usuario.
+             * La primera imagen de cada categoría no lleva lazy (puede ser LCP).
+             */}
+            {galleryItems.map((item, globalIndex) => {
+              const categoryItems = galleryItems.filter((g) => g.category === item.category);
+              const localIndex = categoryItems.indexOf(item);
+              const isActiveCategory = item.category === tab;
+              const isActiveImage = isActiveCategory && localIndex === activeIndex;
+              const isFirstOfCategory = localIndex === 0;
+
+              return (
+                <div
+                  key={item.image}
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    visibility: isActiveImage ? 'visible' : 'hidden',
+                    // Mantener en el DOM pero fuera del viewport visual cuando no activa
+                  }}
+                  aria-hidden={!isActiveImage}
+                >
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    width="1600"
+                    height="1067"
+                    loading={isFirstOfCategory && item.category === 'Corte láser' ? 'eager' : 'lazy'}
+                    decoding="async"
+                    className="image-tint h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#111a23] via-transparent to-transparent opacity-95 pointer-events-none" />
+                  <div className="absolute bottom-8 left-8 pointer-events-none">
+                    <p className="font-display text-2xl font-bold md:text-3xl">{item.title}</p>
+                    <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-[#e5d00e]">{item.meta}</p>
+                  </div>
                 </div>
-              </>
-            )}
+              );
+            })}
           </div>
 
-          {/* Indicadores de posición (puntos) */}
+          {/* Indicadores de posición (puntos) — solo para la categoría activa */}
           <div className="carousel-progress z-20" role="tablist" aria-label="Imágenes de la categoría">
             {visible.map((item, index) => (
               <button
